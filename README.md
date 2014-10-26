@@ -43,14 +43,15 @@ The `StreatEasy::Property` object has the following methods:
 
 * .rentals
 * .sales
-* .order
-* .neighborhoods
-* .limit
+* .order(order_type)
+* .neighborhoods(list_of_neighborhoods)
+* .options(list_of_options)
+* .limit(int)
 * .all
 
 
 ### Examples
-* return the 200 most expensive rentals in all of manhattan (note, the API maxes out at 200)
+* return the `200` `:most_expensive` `rentals` in all of `'nyc'` (note, the API maxes out at 200)
 ```ruby
 properties = StreetEasy::Property.all
 # or
@@ -58,28 +59,33 @@ properties = StreetEasy::Property.rentals.all
 # or
 properties = StreetEasy::Property.rentals.order(:most_expensive).all
 ```
-* return the 200 most expensive sales in all of manhattan (note, the API maxes out at 200)
+* return the `200` `:most_expensive` `sales` in all of `'nyc'` (note, the API maxes out at 200)
 
 ```ruby
 properties = StreetEasy::Property.sales.all
 #or
 properties = StreetEasy::Property.sales.order(:most_expensive).all
 ```
-* return the 12 least expensive rentals in all of manhattan.
+* return the `12` `:least_expensive` `rentals` in all of `'nyc'`.
 
 ```ruby
 properties = StreetEasy::Property.order(:least_expensive).limit(12)
 ```
 
-* return the 30 least expensive rentals in soho.
+* return the `30` `:least_expensive` `rentals` in `'soho'`.
 ```ruby
 properties = StreetEasy::Property.neighborhoods('soho').order(:least_expensive).limit(30)
 ```
-* return the newest rentals in soho AND murray hill (limit 200)
+* return the `newest` `rentals` in both `'soho'` AND `'murray-hill'` (limit 200)
 ```ruby
 properties = StreetEasy::Property.neighborhoods('soho', 'murray-hill').order(:newest).all
 # or
 properties = StreetEasy::Property.neighborhoods(['soho', 'murray-hill']).order(:newest).all
+```
+
+* return the `30` `:least_expensive` `sales` in `'soho'`, `'murray hill'`, and the `'lower-east-side'`, but only return their `:price`, `:area_name`, `:description`, and `:floorplan`
+```ruby
+properties = StreetEasy::Property.neighborhoods('soho', 'murray-hill', 'lower-east-side').options(:price, :area_name, :description, :floorplan).order(:least_expensive).limit(30)
 ```
 
 ### full list of neighborhoods:
@@ -101,7 +107,7 @@ properties = StreetEasy::Property.neighborhoods(['soho', 'murray-hill']).order(:
   'little-italy'
   'lower-east-side'
   'nolita'
-  'soho
+  'soho'
   'stuyvesant-town/pcv'
   'tribeca'
   'west-village'
@@ -141,60 +147,53 @@ properties = StreetEasy::Property.neighborhoods(['soho', 'murray-hill']).order(:
 ```
 
 
-#### .order
-
-list of .order options
-
+### list of .order options
 ```ruby
   :most_expensive  # default
   :least_expensive
   :newest
 ```
 
-
-
-Hopefully this will give you an idea of what you can do with this api wrapper.
-
-#### .options(:title, :ppsf, :floorplan)
+### list of .option parameters
 
 ```ruby
       
   # default attributes
-  :title,
-  :area_name,
-  :price,
-  :bedrooms,
-  :bathrooms,
-  :size_sqft,
-  :url,
-  :medium_image_uri,
+  :title
+  :area_name
+  :price
+  :bedrooms
+  :bathrooms
+  :size_sqft
+  :url
+  :medium_image_uri
 
   # additional attributes
-  :source_label,
-  :clean_address,
-  :description,
-  :half_baths,
-  :rooms_description,
-  :addr_street,
-  :addr_unit,
-  :normalized_addr_unit,
-  :addr_city,
-  :addr_lat,
-  :addr_lon,
-  :size_sqft_num,
-  :lot_size,
-  :size_description,
-  :ppsf,
-  :ppsf_num,
-  :ppsf_description,
-  :created_at,
-  :unit_type,
-  :unit_type_label,
-  :status,
-  :price_cur,
-  :floorplan,
-  :open_house_start,
-  :open_house_end,
+  :source_label
+  :clean_address
+  :description
+  :half_baths
+  :rooms_description
+  :addr_street
+  :addr_unit
+  :normalized_addr_unit
+  :addr_city
+  :addr_lat
+  :addr_lon
+  :size_sqft_num
+  :lot_size
+  :size_description
+  :ppsf
+  :ppsf_num
+  :ppsf_description
+  :created_at
+  :unit_type
+  :unit_type_label
+  :status
+  :price_cur
+  :floorplan
+  :open_house_start
+  :open_house_end
   :sourceid
 ```
 
