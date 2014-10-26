@@ -14,7 +14,6 @@ module StreetEasy
       :url
     ]
 
-
     OPTIONS = [
       :title,
       :area_name,
@@ -24,7 +23,6 @@ module StreetEasy
       :size_sqft,
       :url,
       :medium_image_uri,
-
       :source_label,
       :clean_address,
       :description,
@@ -94,6 +92,7 @@ module StreetEasy
         generate_properties
       end
 
+
       private
       def generate_properties
         parsed_reply = get_parsed_reply
@@ -102,6 +101,7 @@ module StreetEasy
         (0..@limit - 1).each do |i|
           break if parsed_reply['listings'][i] == nil
           rental = {}
+
           OPTIONS.each do |option|
             rental[option] = parsed_reply['listings'][i][option.to_s] if @options.include?(option)
           end
@@ -111,7 +111,6 @@ module StreetEasy
 
         properties
       end
-
 
       def get_parsed_reply
         uri = StreetEasy::Client.construct_url({
