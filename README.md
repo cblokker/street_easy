@@ -73,13 +73,13 @@ properties = StreetEasy::Property.order(:least_expensive).limit(12)
 
 * return the 30 least expensive rentals in soho.
 ```ruby
-properties = StreetEasy::Property.neighborhoods('soho')order(:least_expensive).limit(30)
+properties = StreetEasy::Property.neighborhoods('soho').order(:least_expensive).limit(30)
 ```
 * return the newest rentals in soho AND murray hill (limit 200)
 ```ruby
-properties = StreetEasy::Property.neighborhoods('soho', 'murray-hill')order(:newest).all
+properties = StreetEasy::Property.neighborhoods('soho', 'murray-hill').order(:newest).all
 # or
-properties = StreetEasy::Property.neighborhoods(['soho', 'murray-hill'])order(:newest).all
+properties = StreetEasy::Property.neighborhoods(['soho', 'murray-hill']).order(:newest).all
 ```
 
 ### full list of neighborhoods:
