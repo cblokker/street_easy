@@ -29,8 +29,11 @@ Then, place this code somewhere in your ruby environment.
 
 ruby```
 require 'street_easy'
+```
 
-# add your API key to the client
+add your API key to the client:
+
+ruby```
 StreetEasy::Client.api_key = 'your_api_key'
 ```
 
@@ -38,12 +41,15 @@ StreetEasy::Client.api_key = 'your_api_key'
 
 The `StreatEasy::Property` object has the following methods:
 
-`
+* .rentals
+* .sales
+* .order
+* .neighborhoods
+* .limit
+* .all
 
-#### Methods
 
-
-#####Examples
+### Examples
 ```ruby
 # return the 200 most expensive rentals in all # of manhattan (note, the API maxes out at 200)
 properties = StreetEasy::Property.all
