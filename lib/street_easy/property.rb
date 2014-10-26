@@ -98,8 +98,8 @@ module StreetEasy
         parsed_reply = get_parsed_reply
         properties = []
 
-        (0..@limit - 1).each do |i|
-          break if parsed_reply['listings'][i] == nil
+        (1...@limit).each do |i|
+          break if parsed_reply['listings'][i].nil?
           rental = {}
 
           OPTIONS.each do |option|
