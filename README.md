@@ -50,54 +50,39 @@ The `StreatEasy::Property` object has the following methods:
 
 
 ### Examples
+* return the 200 most expensive rentals in all of manhattan (note, the API maxes out at 200)
 ```ruby
-# return the 200 most expensive rentals in all # of manhattan (note, the API maxes out at 200)
 properties = StreetEasy::Property.all
-
 # or
-
 properties = StreetEasy::Property.rentals.all
-
 # or
-
 properties = StreetEasy::Property.rentals.order(:most_expensive).all
 ```
+* return the 200 most expensive sales in all of manhattan (note, the API maxes out at 200)
 
 ```ruby
-# return the 200 most expensive sales in all of # manhattan (note, the API maxes out at 200)
-
 properties = StreetEasy::Property.sales.all
-
 #or
-
 properties = StreetEasy::Property.sales.order(:most_expensive).all
 ```
+* return the 12 least expensive rentals in all of manhattan.
 
 ```ruby
-# return the 12 least expensive rentals in all 
-# of manhattan.
-
 properties = StreetEasy::Property.order(:least_expensive).limit(12)
 ```
 
+* return the 30 least expensive rentals in soho.
 ```ruby
-# return the 30 least expensive rentals in soho.
-
 properties = StreetEasy::Property.neighborhoods('soho')order(:least_expensive).limit(30)
 ```
-
+* return the newest rentals in soho AND murray hill (limit 200)
 ```ruby
-# return the newest rentals in soho AND
-# murray hill (limit 200)
-
 properties = StreetEasy::Property.neighborhoods('soho', 'murray-hill')order(:newest).all
-
 # or
-
 properties = StreetEasy::Property.neighborhoods(['soho', 'murray-hill'])order(:newest).all
 ```
 
-#### full list of neighborhoods:
+### full list of neighborhoods:
 ```ruby
   'battery-park-city'
   'chelsea'
@@ -112,7 +97,7 @@ properties = StreetEasy::Property.neighborhoods(['soho', 'murray-hill'])order(:n
   'nomad'
   'gramercy-park'
   'greenwich-village'
-  'noho
+  'noho'
   'little-italy'
   'lower-east-side'
   'nolita'
