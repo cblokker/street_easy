@@ -201,7 +201,19 @@ properties = StreetEasy::Property.sales
 
 PLEASE CONTRIBUTE!  This is my first ruby gem, and my first contribution to the open source movement! Therefore, there's a lot of room for improvement :)
 
-1. Fork it ( https://github.com/[my-github-username]/street_easy/fork )
+TODO:
+* tests (oh the travis-ci!)
+* error handling
+* refactor
+* add other classes like `StreetEasy::NeighborhoodData`, `StreetEasy::Geo`, and others.
+
+THOUGHTS:
+* extract `StreetEasy::Property` into `StreetEasy::Property::Rental` and `StreetEasy::Property::Sale`?
+* return objects instead of hashes?
+* add a `.first` method? Other methods?
+* don't implement method chaining?
+
+1. Fork it ( https://github.com/cblokker/street_easy/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
