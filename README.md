@@ -27,19 +27,11 @@ First, register for an API key [here](http://streeteasy.com/api/info).
 
 Then, place this code somewhere in your ruby environment.
 
-ruby```
-
-require 'street_easy'
-
-```
+    require 'street_easy'
 
 add your API key to the client:
 
-ruby```
-
-StreetEasy::Client.api_key = 'your_api_key'
-
-```
+    StreetEasy::Client.api_key = 'your_api_key'
 
 ## Property
 
