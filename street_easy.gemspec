@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Chase Blokker"]
   spec.email         = ["chaseblokker@yahoo.com"]
   spec.summary       = %q{A ruby wrapper for the street easy API}
-  spec.homepage      = "http://rubygems.org/gems/street_easy"
+  spec.description   = %q{A ruby wrapper for the street easy API}
+  spec.homepage      = "https://rubygems.org/gems/street_easy"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

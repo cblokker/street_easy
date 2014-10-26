@@ -2,7 +2,7 @@
 
 ## Description
 
-A little gem tha integrates with the Street Easy API (beta).
+A little gem that integrates with the Street Easy API (beta).
 
 API Documentation available [here](http://streeteasy.com/api/info).
 
