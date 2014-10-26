@@ -28,13 +28,17 @@ First, register for an API key [here](http://streeteasy.com/api/info).
 Then, place this code somewhere in your ruby environment.
 
 ruby```
+
 require 'street_easy'
+
 ```
 
 add your API key to the client:
 
 ruby```
+
 StreetEasy::Client.api_key = 'your_api_key'
+
 ```
 
 ## Property
@@ -85,7 +89,11 @@ properties = StreetEasy::Property.neighborhoods(['soho', 'murray-hill']).order(:
 
 * return the `30` `:least_expensive` `sales` in `'soho'`, `'murray hill'`, and the `'lower-east-side'`, but only return their `:price`, `:area_name`, `:description`, and `:floorplan`
 ```ruby
-properties = StreetEasy::Property.neighborhoods('soho', 'murray-hill', 'lower-east-side').options(:price, :area_name, :description, :floorplan).order(:least_expensive).limit(30)
+properties = StreetEasy::Property.sales
+  .neighborhoods('soho', 'murray-hill', 'lower-east-side')
+  .options(:price, :area_name, :description, :floorplan)
+  .order(:least_expensive)
+  .limit(30)
 ```
 
 ### full list of neighborhoods:
