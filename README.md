@@ -83,7 +83,7 @@ properties = StreetEasy::Property.neighborhoods(['soho', 'murray-hill']).order(:
 ```ruby
 properties = StreetEasy::Property.sales
   .neighborhoods('soho', 'murray-hill', 'lower-east-side')
-  .options(:price, :area_name, :description, :floorplan)
+  .options(:price, :area_name, :description_excerpt, :floorplan)
   .order(:least_expensive)
   .limit(30)
 ```
@@ -171,7 +171,7 @@ properties = StreetEasy::Property.sales
   # additional attributes
   :source_label
   :clean_address
-  :description
+  :description_excerpt
   :half_baths
   :rooms_description
   :addr_street

@@ -25,7 +25,7 @@ module StreetEasy
       :medium_image_uri,
       :source_label,
       :clean_address,
-      :description,
+      :description_excerpt,
       :half_baths,
       :rooms_description,
       :addr_street,
