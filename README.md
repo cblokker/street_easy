@@ -1,4 +1,4 @@
-# StreetEasy API Gem
+# StreetEasy API Gem [![Gem Version](https://badge.fury.io/rb/street_easy.svg)](http://badge.fury.io/rb/street_easy)
 
 ## Description
 
